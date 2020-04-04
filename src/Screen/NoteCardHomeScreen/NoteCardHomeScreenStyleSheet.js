@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { screenBackgroundColor } from '../../Constants/Colors';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export const Styles = StyleSheet.create({
   container: {
@@ -10,10 +9,12 @@ export const Styles = StyleSheet.create({
   },
   pinnedNoteListContainer: {
     width: '100%',
-    height: '20%'
+    height: '25%',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   noteListContainer: {
-    width: wp('100%'),
-    height: '80%'
+    width: '100%',
+    height: '75%'
   }
 });

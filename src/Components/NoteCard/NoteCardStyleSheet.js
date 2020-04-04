@@ -15,7 +15,10 @@ export const Styles = StyleSheet.create({
     width: '100%',
     backgroundColor: cardBackgroundColor.light,
     borderRadius: 10,
-    maxHeight: hp('20%')
+    paddingVertical: '2%',
+    maxHeight: hp('15%'),
+    borderWidth: 0.5,
+    borderColor: '#ccc'
   },
   cardHeaderContainer: {
     width: '100%',

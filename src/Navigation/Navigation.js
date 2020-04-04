@@ -10,7 +10,7 @@ class Navigation extends React.Component {
     return (
       <Stack.Navigator
         initialRouteName='Note Card'
-        screenOptions={{ headerStyle: { backgroundColor: screenBackgroundColor.light } }}
+        screenOptions={{ headerStyle: { height: 0 }, headerTransparent: true }}
       >
         <Stack.Screen name='Note Card' component={NoteCardHomeScreen} />
       </Stack.Navigator>

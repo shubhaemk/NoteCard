@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, FlatList, View } from 'react-native';
+import { SafeAreaView, FlatList, View, Dimensions } from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 
 import { Styles } from './NoteCardHomeScreenStyleSheet';
 
@@ -18,10 +19,28 @@ class NoteCardHomeScreen extends React.Component {
 
   _keyExtractorNoteCard = item => item[`uuid`];
 
+  _renderPinnedNotes = ({ item, index }) => {
+    const { cardTitle, cardText } = item;
+    return <NoteCard cardTitle={cardTitle} cardText={cardText} />;
+  };
+
   render() {
+    console.log(parseInt(Dimensions.get('window').width) + 200);
     return (
       <SafeAreaView style={Styles.container}>
-        <View style={Styles.pinnedNoteListContainer}></View>
+        <View style={Styles.pinnedNoteListContainer}>
+          <Carousel
+            ref={c => {
+              this._carousel = c;
+            }}
+            data={this.state.cardList}
+            renderItem={this._renderPinnedNotes}
+            layout={'stack'}
+            //layoutCardOffset={18}
+            sliderWidth={parseInt(Dimensions.get('window').width)}
+            itemWidth={parseInt(Dimensions.get('window').width)}
+          />
+        </View>
         <View style={Styles.noteListContainer}>
           <NoteListHeader />
           <FlatList
