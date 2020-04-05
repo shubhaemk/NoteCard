@@ -1,14 +1,14 @@
 export const screenBackgroundColor = {
   dark: '#000',
-  light: '#F2F6FD'
+  light: '#000000'
 };
 
 export const cardBackgroundColor = {
-  light: '#FFF'
+  light: '#323232'
 };
 
 export const appColor = {
-  primary: '#445EAE',
+  primary: '#ff1e56',
   seondary: '#A6A3B0'
 };
 
