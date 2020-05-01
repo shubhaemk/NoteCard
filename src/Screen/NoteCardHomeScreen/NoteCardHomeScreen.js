@@ -7,6 +7,7 @@ import { Styles } from './NoteCardHomeScreenStyleSheet';
 import { cardList } from '../../Constants/dummyData';
 import NoteCard from '../../Components/NoteCard/NoteCard';
 import NoteListHeader from '../../Components/NoteListHeader/NoteListHeader';
+import NoteCardFooter from '../../Components/NoteCardFooter/NoteCardFooter';
 class NoteCardHomeScreen extends React.Component {
   state = {
     cardList
@@ -28,7 +29,7 @@ class NoteCardHomeScreen extends React.Component {
     console.log(parseInt(Dimensions.get('window').width) + 200);
     return (
       <SafeAreaView style={Styles.container}>
-        <View style={Styles.pinnedNoteListContainer}>
+        {/* <View style={Styles.pinnedNoteListContainer}>
           <Carousel
             ref={c => {
               this._carousel = c;
@@ -40,15 +41,16 @@ class NoteCardHomeScreen extends React.Component {
             sliderWidth={parseInt(Dimensions.get('window').width)}
             itemWidth={parseInt(Dimensions.get('window').width)}
           />
-        </View>
+        </View> */}
+        <NoteListHeader />
         <View style={Styles.noteListContainer}>
-          <NoteListHeader />
           <FlatList
             data={this.state.cardList}
             renderItem={this._renderNoteCard}
             keyExtractor={this._keyExtractorNoteCard}
           />
         </View>
+        <NoteCardFooter />
       </SafeAreaView>
     );
   }

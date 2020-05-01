@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import NoteCardHomeScreen from '../Screen/NoteCardHomeScreen/NoteCardHomeScreen';
-import { screenBackgroundColor } from '../Constants/Colors';
+import { darkTheme } from '../Constants/Colors';
 
 const Stack = createStackNavigator();
 
@@ -10,7 +10,15 @@ class Navigation extends React.Component {
     return (
       <Stack.Navigator
         initialRouteName='Note Card'
-        screenOptions={{ headerStyle: { backgroundColor: screenBackgroundColor.light } }}
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: darkTheme.headerBackgroundColor
+          },
+          headerTitleStyle: {
+            color: darkTheme.titleColor,
+            fontWeight: 'bold'
+          }
+        }}
       >
         <Stack.Screen name='Note Card' component={NoteCardHomeScreen} />
       </Stack.Navigator>

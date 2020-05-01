@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { screenBackgroundColor } from '../../Constants/Colors';
+import { darkTheme } from '../../Constants/Colors';
 
 export const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: screenBackgroundColor.light,
+    backgroundColor: darkTheme.screenBackgroundColor,
     alignItems: 'center'
   },
   pinnedNoteListContainer: {
